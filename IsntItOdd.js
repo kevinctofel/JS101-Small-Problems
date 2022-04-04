@@ -11,4 +11,5 @@
 // Input: integer
 // Output: true or false returned
 
+
 console.log();
