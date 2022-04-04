@@ -1,4 +1,7 @@
-// Write a function that takes one integer argument, which may be positive, negative, or zero. This method returns true if the number's absolute value is odd. You may assume that the argument is a valid integer value.
+// Write a function that takes one integer argument, which may be
+// positive, negative, or zero. This method returns true if the number's
+// absolute value is odd. You may assume that the argument is a valid
+// integer value.
 
 // Examples:
 // console.log(isOdd(2)); // => false
@@ -14,7 +17,7 @@
 const readline = require('readline-sync');
 
 function checkIfOdd(num) {
-  return (Math.abs(num) % 2 === 1 ? true :  false);
+  return (Math.abs(num) % 2 === 1);
 }
 
 // main app
@@ -24,6 +27,3 @@ console.log(`Enter an integer and I'll tell you if it's odd.\n`);
 let input = Number(readline.question()); // coerce string input to number
 
 console.log(checkIfOdd(input));
-
-
-
