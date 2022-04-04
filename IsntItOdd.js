@@ -11,5 +11,19 @@
 // Input: integer
 // Output: true or false returned
 
+const readline = require('readline-sync');
 
-console.log();
+function checkIfOdd(num) {
+  return (Math.abs(num) % 2 === 1 ? true :  false);
+}
+
+// main app
+console.clear();
+console.log(`Enter an integer and I'll tell you if it's odd.\n`);
+
+let input = Number(readline.question()); // coerce string input to number
+
+console.log(checkIfOdd(input));
+
+
+
