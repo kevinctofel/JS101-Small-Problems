@@ -2,10 +2,10 @@
 
 const cleanUp = (inputString) => {
 
+    const regex = /[^A-Za-z0-9]/g;
+    let cleanString = inputString.replace(regex, " ").split("  ").join("");
 
-
-
-    
+    return (`"${cleanString}"`);
 }
 
 
