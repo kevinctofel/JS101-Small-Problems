@@ -3,8 +3,17 @@
 
 const century = (year) => {
 
+    let centuryCalc = year/100;
+
+    if (0 <= centuryCalc % 1 < 1 && centuryCalc < 100) centuryCalc ++;
+    console.log(centuryCalc); // handle first 10 centuries
+
     
-}
+    // while (centuryCalc % 100 <= 100) {
+    //         centuryCalc = centuryCalc / 100;
+    //         console.log(centuryCalc);
+    //     };
+    }
 
 
 console.log(century(2000));        // "20th"
