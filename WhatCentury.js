@@ -3,26 +3,35 @@
 
 const century = (year) => {
 
-    let centuryCalc;
-    console.log(year);
-    // Handle adding century for year "one"
-    if (year < 100) {
-        centuryCalc = 1;
-     } else if (year % 100 === 1) {
-        centuryCalc = (year / 100) + 1;
-    } else {
-        centuryCalc = year / 100;
+    let centuryCalc = Math.floor(year / 100) + 1;
+
+    if (year % 100 === 0) {
+        centuryCalc -= 1;
     }
 
-    return centuryCalc.toFixed();
+    return String(centuryCalc) + ending(centuryCalc) ;       ;
 
 }
 
+const ending = (centuryCalc) => {
+    let lastNum = centuryCalc % 10;
 
-console.log(century(2000));        // "20th"
-console.log(century(2001));        // "21st"
+    if (centuryCalc % 100 >= 11 && centuryCalc % 100 <= 13) {
+        return 'th';
+    }
+
+    switch (lastNum) {
+        case 1: return 'st';
+        case 2: return 'nd';
+        case 3: return 'rd';
+        default: return 'th';
+    }
+}
+
 console.log(century(1965));        // "20th"
+console.log(century(2001));        // "21st"
 console.log(century(256));         // "3rd"
+console.log(century(2000));        // "20th"
 console.log(century(5));           // "1st"
 console.log(century(10103));       // "102nd"
 console.log(century(1052));        // "11th"
