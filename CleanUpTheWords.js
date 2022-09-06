@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* eslint-disable max-len */
 // Given a string that consists of some words and an assortment of non-alphabetic characters, write a function that returns that string with all of the non-alphabetic characters replaced by spaces. If one or more non-alphabetic characters occur in a row, you should only have one space in the result (i.e., the result string should never have consecutive spaces).
 
@@ -32,3 +33,18 @@ const cleanUp = (origString) => {
 
 
 cleanUp("---what's my +*& line?");    // " what s my line "
+=======
+// Given a string that consists of some words and an assortment of non-alphabetic characters, write a function that returns that string with all of the non-alphabetic characters replaced by spaces. If one or more non-alphabetic characters occur in a row, you should only have one space in the result (i.e., the result string should never have consecutive spaces).
+
+const cleanUp = (inputString) => {
+
+    const regex = /[^A-Za-z0-9]/g;
+    let cleanString = inputString.replace(regex, " ").split("  ").join("");
+
+    return (`"${cleanString}"`);
+}
+
+
+
+console.log(cleanUp("---what's my +*& line?"));    // " what s my line "
+>>>>>>> 3c3ad17ba7b6ed713e3110b92cfe69c66dcaad18
