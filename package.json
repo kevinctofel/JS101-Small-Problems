@@ -4,5 +4,6 @@
     "eslint": "^7.12.1",
     "eslint-cli": "^1.1.1",
     "readline-sync": "^1.4.10"
-  }
+  },
+  "type": "module"
 }
