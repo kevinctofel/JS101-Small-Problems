@@ -3,19 +3,20 @@
 // and returns an object that shows the number of words of different sizes.Words consist of any sequence of non-space characters.
 
 const wordSizes = (inputString) => {
-  let output = {};
-  let outputArray = [];
+  let output.create = {};
+  let outputArray = [[0], [0], [0], [0], [0], [0], [0], [0]];
   let inputArray = [];
   inputArray = inputString.split(' ');
   console.log(inputArray);
   inputArray.forEach(element => {
-    outputArray.push([String(element.length), 1]);
+    outputArray[element.length]++;
   });
-
   console.log(outputArray);
   console.log(output);
-
-
+  for (let index = 0; index < outputArray.length; index++) {
+    output.key = String(index)
+    output.value = outputArray[index];
+  };
 };
 
 wordSizes('Four score and seven.');                       // { "3": 1, "4": 1, "5": 1, "6": 1 }
