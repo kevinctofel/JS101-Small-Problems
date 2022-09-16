@@ -11,6 +11,15 @@ const wordSizes = (inputString) => {
   inputArray.forEach(element => {
     outputArray[element.length]++;
   });
+<<<<<<< HEAD
+=======
+  let outputValues = [];
+  for (let index = 0; index < outputArray; index++) {
+    if outputValues[index[]]
+  }
+
+
+>>>>>>> ae0152988cfadf4409974e98d47950f87a650547
   console.log(outputArray);
   console.log(output);
   for (let index = 0; index < outputArray.length; index++) {
