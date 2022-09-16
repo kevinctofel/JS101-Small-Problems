@@ -15,23 +15,25 @@ C:
 
 const dms = (angle) => {
   let inputString = String(angle).split('.');
-  console.log(inputString);
+  // console.log(inputString);
   let degrees = inputString[0];
-  let minutes = inputString[1];
+  let minutes = 0;
+  if (inputString[1] !== undefined) {
+    minutes = inputString[1];
+  }
+  let convertMinutes = (.01 * minutes * 60);
 
-  let convertMinutes = .01 * minutes * 60;
-  let convertSeconds = convertMinutes % 1;
-  convertSeconds = convertSeconds * .01 *  60;
+  let convertSeconds = (convertMinutes % 1) * 60 * .01;
 
-  console.log(degrees, convertMinutes, convertSeconds);
+  console.log(degrees + '˚' + Math.trunc(convertMinutes).toFixed() + "'" + convertSeconds + '"');
 
   return;
-}
+};
 
 
-// console.log(dms(30));           // 30°00'00"
+console.log(dms(30));           // 30°00'00"
 console.log(dms(76.73));        // 76°43'48"
-// console.log(dms(254.6));        // 254°35'59"
+console.log(dms(254.6));        // 254°35'59"
 // console.log(dms(93.034773));    // 93°02'05"
 // console.log(dms(0));            // 0°00'00"
 // console.log(dms(360));          // 360°00'00" or 0°00'00"
