@@ -19,11 +19,16 @@ const dms = (angle) => {
   let degrees = inputString[0];
   let minutes = inputString[1];
 
-  let convertMinutes = .01 * minutes * 60;
-  let convertSeconds = convertMinutes % 1;
-  convertSeconds = convertSeconds * .01 *  60;
+  console.log(degrees, minutes);
 
-  console.log(degrees, convertMinutes, convertSeconds);
+  let convertMinutes = minutes * 60;
+  let minutesOutput = Math.trunc(convertMinutes);
+  let seconds = (convertMinutes % 1);
+  console.log(seconds);
+  seconds = Math.floor(seconds * 60);
+  // convertSeconds = (convertSeconds % convertSeconds) * 60 * .01;
+
+  console.log(degrees, minutesOutput, seconds);
 
   return;
 }
@@ -31,7 +36,7 @@ const dms = (angle) => {
 
 // console.log(dms(30));           // 30°00'00"
 console.log(dms(76.73));        // 76°43'48"
-// console.log(dms(254.6));        // 254°35'59"
-// console.log(dms(93.034773));    // 93°02'05"
+console.log(dms(254.6));        // 254°35'59"
+console.log(dms(93.034773));    // 93°02'05"
 // console.log(dms(0));            // 0°00'00"
 // console.log(dms(360));          // 360°00'00" or 0°00'00"
